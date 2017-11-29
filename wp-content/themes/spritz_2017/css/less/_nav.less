@@ -1,0 +1,76 @@
+/* -------------------------------
+   Nav Bar - Fixe sticky - Menu1
+------------------------------- */
+
+.navbar-fixed-top {
+	top: auto;
+}
+
+.affix {
+  padding:0px;
+  -webkit-transition:padding 0.2s linear;
+  -moz-transition:padding 0.2s linear;  
+  -o-transition:padding 0.2s linear;         
+  transition:padding 0.2s linear;  
+
+}
+
+.affix-top {
+  padding-top:15px;
+  padding-bottom:15px;
+  -webkit-transition:padding 0.5s linear;
+  -moz-transition:padding 0.5s linear;  
+  -o-transition:padding 0.5s linear;         
+  transition:padding 0.5s linear;  
+}
+
+.menu1.navbar-inverse {
+	background: none;
+	border: none;
+}
+
+.menu1.navbar-inverse.navbar-fixed-top.affix {
+	background-color: rgba(0,0,0,0.5);
+}
+
+/* Style des liens */
+
+.navbar-inverse .navbar-nav>a:link, .navbar-inverse .navbar-nav>a:visited {
+	color: @blanc;
+}
+
+.menu1.navbar-inverse .navbar-nav>.active>a {
+background: none;	
+color: @jaune;
+}
+
+.menu1.navbar-inverse .navbar-nav>li>a {
+	color: @blanc;
+}
+
+.menu1.navbar-inverse .navbar-nav>li>a:focus, .menu1.navbar-inverse .navbar-nav>li>a:hover {
+	color: @jaune;
+}
+
+nav.menu1 {
+	font-family: @police_2;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.affix-top {
+	padding-top: 25px;
+}
+
+.menu1 .navbar-nav {
+	float: right;
+}
+
+
+.navbar.affix-top>.container-fluid .navbar-brand {
+margin-left: 15px;
+}
+
+.navbar.affix>.container-fluid .navbar-brand {
+margin-left: -15px;
+}

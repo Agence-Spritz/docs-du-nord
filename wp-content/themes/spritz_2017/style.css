@@ -1,0 +1,76 @@
+/*
+Theme Name: Spritz 2017
+Text domain: Spritz 2017
+Author: Agence Spritz
+Author URI: https://www.agence-spritz.com/
+Version: 1.1
+Description: Thème sur-mesure développé par l'agence Spritz. Ce thème intégre Bootstrap 3, Awsome fonts 4.7, less.js-2.7.2et est fait pour fonctionner avec Visual Composer et Revolution Slider.
+*/
+
+
+/* -------------------------------
+   Styles personnalisés - ajouts de styles
+------------------------------- */
+
+/* A personnaliser selon projet */
+
+/* -------------------------------
+   Personnalisation navbar
+------------------------------- */
+
+
+
+.menu1 .navbar-brand {
+	height: 80px;
+	padding: 0;
+	margin-right: 200px;
+}
+
+.menu1 .navbar-nav>li>a {
+	line-height: 50px;
+}
+
+ul.nav.navbar-nav .search-div {
+float: left;
+line-height: 50px;
+padding: 15px;
+margin-left: 200px;
+}
+
+ul.nav.navbar-nav .search-div a {
+	color: #fff;
+	margin-left: 25px;
+}
+
+ul.nav.navbar-nav .search-div a:hover {
+	color: #ffcc43;
+}
+
+.menu1 .zone-recherche {
+	
+	float: right;
+	margin-bottom: 20px;
+}
+
+/* -------------------------------
+   Revolution slider
+------------------------------- */
+ 
+.rev_slider .slotholder:after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+ 
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+50 */
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */	
+}
+
+
+
