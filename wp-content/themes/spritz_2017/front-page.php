@@ -29,7 +29,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 				
 					<article id="post-<?php the_ID(); ?> <?php post_class(); ?>">
 						<div class="entry-content">
-							<?php the_content(); ?>
+							
+							
+							<?php putRevSlider( 'accueil' ); ?>
+							
+							<section class="section-sp">
+								<div class="heading-title center">
+									<div class="col-md-1"></div>
+										<div class="col-xs-12 col-md-10">
+										<h1>Production de films documentaires</h1>
+										<h4>Un nouveau regard sur le monde qui nous entoure</h4>
+										
+										<div class="separateur"></div>
+										<?php the_field("zone_texte_1")?>
+										</div>
+									<div class="col-md-1"></div>
+									<div class="clearfix"></div>
+								</div>
+							</section>
+							
 						</div>
 					</article>
 				    
@@ -40,6 +58,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php endif; ?>
 			
 			</main>
+		</div>
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<section class="portfolio-films">
+				<div class="col-md-6" style="height: 400px; background-color: #ccc">
+					<caption><h3>Titre</h3></caption>
+				</div>
+				<div class="col-md-6 no-padding">
+					<div class="col-md-6 " style="height: 200px; background-color: #000">
+						<caption><h3>Titre</h3></caption>
+					</div>
+					<div class="col-md-6 "style="height: 200px; background-color: #fe0000">
+						<caption><h3>Titre</h3></caption>
+					</div>
+					<div class="col-md-12 " style="height: 200px; background-color: #F1F1F1">
+						<caption><h3>Titre</h3></caption>
+					</div>
+				</div>
+			</section>
 		</div>
 	</div>
 	
