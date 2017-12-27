@@ -4,8 +4,6 @@
 define('SPRITZ_VERSION', '1.0.0'); 
 
 
-	
-
 //---------------------------------------------
 // Déclaration des feuilles de styles et des JS 
 //---------------------------------------------	
@@ -29,7 +27,6 @@ function spritz_scripts() {
 	wp_enqueue_style('spritz_fonts' , get_template_directory_uri(). '/font-awesome-4.7.0/css/font-awesome.min.css', array(), SPRITZ_VERSION, 'all');
 	
 	
-	
 	// Scripts
 	
 	// On lie le fichier de script JS de LESS - plus utilisé grâce au plugin "wp-less"
@@ -40,6 +37,10 @@ function spritz_scripts() {
 	
 	// On lie le fichier de script JS personnalisé (true signifie que l'on charge en fin de page, il dépend de bootstrap js et sera chargé en dernier)
 	wp_enqueue_script('spritz_scriptperso' , get_template_directory_uri(). '/js/spritz.js', array('jquery','spritz_boostrap_script'), SPRITZ_VERSION, true);
+	
+	// Insertion de Stellar, gestion du parallax
+	wp_enqueue_script('spritz_stellar' , get_template_directory_uri(). '/js/jquery.stellar.min.js', array('jquery'), SPRITZ_VERSION, true);
+	
 	
 } 
 
@@ -67,14 +68,12 @@ function my_style_loader_tag_function($tag){
 }
 */
 
-
-
 //---------------------------------------------
 // Création des utilitaires 
 //---------------------------------------------	
 
 function spritz_setup() {
-	
+
 	// prise en charge des images à la une
 	add_theme_support('post-thumbnails');
 	
@@ -90,6 +89,9 @@ function spritz_setup() {
 	// utilisation de la librairie de gestion des menus selon Bootstrap
 	require_once get_template_directory() . '/includes/wp-bootstrap-navwalker.php';
 	
+	// Inclusion du fichier de configuration générale, déclaration des variables globales
+	require_once get_template_directory() . '/includes/config_generale.php';
+	
 	// Activer la gestion des menus
 	register_nav_menus(array('primary' => 'principal', 'secondary' => 'second'));
 	
@@ -98,8 +100,6 @@ function spritz_setup() {
 
 }
 add_action('after_setup_theme', 'spritz_setup');
-
-
 
 
 /************************************************
@@ -176,7 +176,7 @@ if ( is_admin()) {
 		Ce panneau d'administration vous permet de mettre à jour le contenu des différentes pages et rubriques de votre site.<br />
 		Vous pourrez aisément modifier leurs textes, images et bien d'autres choses encore... <br /><br />
 		
-		Pour modifier le contenu des pages, il vous faut aller dans l'onglet 'Pages', sélectionner celle de votre choix et gérer son contenu grâce à 		l'éditeur graphique.<br /><br />
+		Pour modifier le contenu des pages, il vous faut aller dans l'onglet 'Pages', sélectionner celle de votre choix et gérer son contenu grâce à l'éditeur graphique.<br /><br />
 		Nous vous souhaitons une bonne utilisation de votre site.<br /><br />
 		Sébastien (Agence Spritz)";}
 function example_add_dashboard_widgets() {

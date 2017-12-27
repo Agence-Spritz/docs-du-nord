@@ -18,10 +18,10 @@
 .affix-top {
   padding-top:15px;
   padding-bottom:15px;
-  -webkit-transition:padding 0.5s linear;
-  -moz-transition:padding 0.5s linear;  
-  -o-transition:padding 0.5s linear;         
-  transition:padding 0.5s linear;  
+  -webkit-transition:padding 0.2s linear;
+  -moz-transition:padding 0.2s linear;  
+  -o-transition:padding 0.2s linear;         
+  transition:padding 0.2s linear;  
 }
 
 .menu1.navbar-inverse {
@@ -30,7 +30,7 @@
 }
 
 .menu1.navbar-inverse.navbar-fixed-top.affix {
-	background-color: rgba(0,0,0,0.5);
+	background-color: @fondmenu_trans;
 }
 
 /* Style des liens */
@@ -59,7 +59,7 @@ nav.menu1 {
 }
 
 .affix-top {
-	padding-top: 25px;
+	padding-top: 15px;
 }
 
 .menu1 .navbar-nav {
@@ -74,3 +74,34 @@ margin-left: 15px;
 .navbar.affix>.container-fluid .navbar-brand {
 margin-left: -15px;
 }
+
+.navbar.nav-pages {
+	background: @fondmenu;
+}
+
+/* Customisation menu à onglets*/
+
+.table-onglets-ligne {background: #FFF none repeat scroll 0% 0%; margin-bottom: 30px; }
+
+.table-onglets-ligne .nav-tabs { border-bottom: 2px solid #ddd; }
+
+.table-onglets-ligne .nav-tabs > li.active > a, 
+.table-onglets-ligne .nav-tabs > li.active > a:focus, 
+.table-onglets-ligne .nav-tabs > li.active > a:hover { border-width: 0; }
+
+.table-onglets-ligne .nav-tabs > li > a { border: none; color: #666; text-transform: uppercase; }
+
+.table-onglets-ligne .nav-tabs > li.active > a, 
+.table-onglets-ligne .nav-tabs > li > a:hover { border: none; color: @jaune !important; background: transparent;  }
+
+.table-onglets-ligne .nav-tabs > li > a::after { content: ""; background: @jaune; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+
+.table-onglets-ligne .nav-tabs > li.active > a::after, 
+.table-onglets-ligne .nav-tabs > li:hover > a::after { transform: scale(1); }
+
+.table-onglets-ligne .tab-nav > li > a::after { background: @jaune none repeat scroll 0% 0%; color: #fff; }
+
+.table-onglets-ligne .tab-pane { padding: 15px 0; }
+
+.table-onglets-ligne .tab-content{padding:20px}
+
