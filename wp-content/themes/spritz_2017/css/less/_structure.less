@@ -4,13 +4,34 @@
 
 /* Predefined Classes */
 
-.section-sp {
-padding-top: 30px;
-padding-bottom: 40px;
+.content-area {
+padding-top: 40px;
+padding-bottom: 50px;
 }
+
+.content-area.grise {
+	width: 100%;
+	background-color: @gristresclair;	
+}
+
+.section-sp {
+padding-top: 40px;
+padding-bottom: 50px;
+}
+
+.section-standard {
+padding-top: 70px;
+padding-bottom: 70px;
+}
+
+
 
 .heading-title.center {
 	text-align: center;
+}
+
+.heading-title.left {
+	text-align: left;
 }
 
 .heading-title.center .separateur {
@@ -18,6 +39,135 @@ padding-bottom: 40px;
 	height: 2px;
 	background: @jaune;
 	margin: 30px auto 30px auto;
+}
+
+.heading-title.left .separateur {
+	width: 80px;
+	height: 2px;
+	background: @jaune;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.page-heading {
+	height: 325px;
+	background: #ccc;
+	width: 100%;
+	margin-top: 110px;
+}
+
+
+.page-heading.single {
+	height: 450px;
+}
+
+.page-heading.page-404 {
+	height: calc(~"100vh - 110px");
+}
+
+.page-heading {
+  text-align: center;
+  background-color: transparent;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  width: 100%;
+  color: @blanc;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.page-heading .overlay {
+	background-color: rgba(0,0,0,0.4);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.page-heading .spritz-title-holder {
+display: table;
+height: 325px;
+position: relative;
+width: 100%
+}
+
+.page-heading.single .spritz-title-holder {
+height: 450px;
+}
+
+.page-heading.page-404 .spritz-title-holder {
+height: calc(~"100vh - 110px");
+}
+
+.page-heading .spritz-container {
+	background-color: transparent;
+display: table-row;
+vertical-align: middle;
+padding: 0;
+width: 100%;
+z-index: 100;
+position: relative
+}
+
+.page-heading .spritz-container:after {
+	content: " ";
+display: table;
+}
+
+
+.page-heading .spritz-container-inner {
+display: table-cell;
+padding: 0 !important;
+vertical-align: middle;
+width: 100%;
+margin: 0 auto
+}
+
+.page-heading .spritz-title-subtitle-holder {
+	display: block;
+padding: 0;
+position: relative;
+z-index: 25;
+}
+
+.page-heading h1 {
+	font-size: 80px;
+	letter-spacing: 3px;
+text-transform: uppercase;
+	display: inline-block;
+vertical-align: middle;
+color: @blanc;
+}
+
+.page-heading p {
+	font-size: 16px;
+	text-transform: uppercase;
+	color: @blanc;
+}
+
+.page-heading .category span {
+	color: @blanc;
+	font-size: 16px;
+	letter-spacing: 3px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+text-transform: uppercase;
+display: inline-block;
+}
+
+.titre-section {
+	text-align: left;
+	width: 100%;
+}
+
+.titre-section .separateur {
+	width: 100%;
+	height: 1px;
+	background: @jaune;
+	margin-top: 10px;
+	margin-bottom: 25px;
 }
 
 .no-padding {
@@ -99,6 +249,8 @@ padding-bottom: 40px;
 .m-t-30 { margin-top: 30px !important; }
 .m-t-35 { margin-top: 35px !important; }
 .m-t-40 { margin-top: 40px !important; }
+.m-t-50 { margin-top: 50px !important; }
+.m-t-70 { margin-top: 70px !important; }
 
 .m-r-0 { margin-right: 0px !important; }
 .m-r-1 { margin-right: 1px !important; }
@@ -127,6 +279,8 @@ padding-bottom: 40px;
 .m-b-30 { margin-bottom: 30px !important; }
 .m-b-35 { margin-bottom: 35px !important; }
 .m-b-40 { margin-bottom: 40px !important; }
+.m-b-50 { margin-bottom: 50px !important; }
+.m-b-70 { margin-bottom: 70px !important; }
 
 .m-l-0 { margin-left: 0px !important; }
 .m-l-1 { margin-left: 1px !important; }
@@ -460,3 +614,29 @@ a.text-white:focus {
 .underline {
     border-bottom: 1px solid #e2e7eb !important;
 }
+
+
+
+
+
+
+/* Classes réservées aux mobiles */
+@media screen and (max-width: 768px) {
+	
+	.m-m-t-15 {
+	margin-top: 15px !important;	
+	}
+	.m-m-b-35 {
+	margin-bottom: 35px !important;	
+	}
+	
+	.m-m-b-50 {
+	margin-bottom: 50px !important;	
+	}
+
+	
+	.m-m-b-0 {
+	margin-bottom: 0px !important;	
+	}
+}
+
