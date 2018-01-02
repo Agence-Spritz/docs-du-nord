@@ -125,28 +125,35 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 							        <!-- Indicators -->
 							        <ol class="carousel-indicators">
 							            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-							            <?php if(get_field('visuel_3')) { ?><li data-target="#carousel-example-generic" data-slide-to="1"></li><?php } ?>
-							            <?php if(get_field('visuel_4')) { ?><li data-target="#carousel-example-generic" data-slide-to="2"></li><?php } ?>
-							            <?php if(get_field('visuel_5')) { ?><li data-target="#carousel-example-generic" data-slide-to="3"></li><?php } ?>
+							            <?php if(get_field('visuel_2')) { ?><li data-target="#carousel-example-generic" data-slide-to="1"></li><?php } ?>
+							            <?php if(get_field('visuel_3')) { ?><li data-target="#carousel-example-generic" data-slide-to="2"></li><?php } ?>
+							            <?php if(get_field('visuel_4')) { ?><li data-target="#carousel-example-generic" data-slide-to="3"></li><?php } ?>
+							            <?php if(get_field('visuel_5')) { ?><li data-target="#carousel-example-generic" data-slide-to="4"></li><?php } ?>
 							        </ol>
 							        <!-- Wrapper for slides -->
 							        <div class="carousel-inner" role="listbox">
+								        
+								        <!-- Visuel n°1 -->
+								        <div class="item active slide1" style="background-image: url(<?php echo $image_url; ?>);"></div>
+								        
 							            <!-- Visuel n°2 -->
-							            <div class="item active slide1" style="background-image: url(<?php echo get_field('visuel_2'); ?>);"></div> 
+							            <?php if(get_field('visuel_2')) { ?>
+							            <div class="item slide2" style="background-image: url(<?php echo get_field('visuel_2'); ?>);"></div> 
+							            <?php } ?>
 							            
 							            <!-- Visuel n°3 -->
 							            <?php if(get_field('visuel_3')) { ?>
-							            	<div class="item slide2" style="background-image: url(<?php echo get_field('visuel_3'); ?>);"></div>
+							            	<div class="item slide3" style="background-image: url(<?php echo get_field('visuel_3'); ?>);"></div>
 							            <?php } ?>
 							            
 							            <!-- Visuel n°4 -->
 							            <?php if(get_field('visuel_4')) { ?>
-							            	<div class="item slide3" style="background-image: url(<?php echo get_field('visuel_4'); ?>);"></div>
+							            	<div class="item slide4" style="background-image: url(<?php echo get_field('visuel_4'); ?>);"></div>
 							            <?php } ?>
 							            
 							            <!-- Visuel n°5 -->
 							            <?php if(get_field('visuel_5')) { ?>
-							            	<div class="item slide4" style="background-image: url(<?php echo get_field('visuel_5'); ?>);"></div>
+							            	<div class="item slide5" style="background-image: url(<?php echo get_field('visuel_5'); ?>);"></div>
 							            <?php } ?>
 							    
 							        </div>
@@ -169,6 +176,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 		</div>
 	</div>
 	
+	<?php if (get_field('equipe') || get_field('partenaires/credits') || get_field('presse') || get_field('festival') )  { ?>
 	<!-- Section + d'infos -->
 	<section class="content-area grise">
 		<div class="container">
@@ -184,7 +192,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 							<!-- Nav tabs -->
 							<div class="plus-dinfos table-onglets-ligne">
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <?php if(get_field('equipe')) { ?><li role="presentation" class="active"><a href="#equipe" aria-controls="equipe" role="tab" data-toggle="tab"><?php pll_e("Equipe"); ?></a></li><?php } ?>
+                                    <?php if(get_field('equipe')) { ?><li role="presentation" <?php if(get_field('equipe')) { echo 'class="active"'; } ?>><a href="#equipe" aria-controls="equipe" role="tab" data-toggle="tab"><?php pll_e("Equipe"); ?></a></li><?php } ?>
                                     <?php if(get_field('partenaires/credits')) { ?><li role="presentation" <?php if(!get_field('equipe')) { echo 'class="active"'; } ?>><a href="#partenaires" aria-controls="partenaires" role="tab" data-toggle="tab"><?php pll_e("Partenaires / Crédits"); ?></a></li><?php } ?>
                                     <?php if(get_field('presse')) { ?><li role="presentation"><a href="#presse" aria-controls="presse" role="tab" data-toggle="tab"><?php pll_e("Presse"); ?></a></li><?php } ?>
                                     <?php if(get_field('festival')) { ?><li role="presentation"><a href="#festivals" aria-controls="festivals" role="tab" data-toggle="tab"><?php pll_e("Festivals"); ?></a></li><?php } ?>
@@ -192,8 +200,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="equipe"><?php the_field('equipe'); ?></div>
-                                    <div role="tabpanel" class="tab-pane" id="partenaires"><?php the_field('partenaires/credits'); ?></div>
+                                    <div role="tabpanel" class="tab-pane <?php if(get_field('equipe')) { echo 'active'; } ?>" id="equipe"><?php the_field('equipe'); ?></div>
+                                    <div role="tabpanel" class="tab-pane <?php if(!get_field('equipe')) { echo 'active'; } ?>" id="partenaires"><?php the_field('partenaires/credits'); ?></div>
                                     <div role="tabpanel" class="tab-pane" id="presse"><?php the_field('presse'); ?></div>
                                     <div role="tabpanel" class="tab-pane" id="festivals"><?php the_field('festival'); ?></div>
                                 </div>
@@ -204,6 +212,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 			</div>
 		</div>
 	</section>
+	<?php } ?>
 	
 	<?php endwhile; else: ?>
 		    <div class="alert alert-warning" role="alert">
