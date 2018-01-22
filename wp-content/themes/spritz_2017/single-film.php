@@ -195,15 +195,24 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
                                     <?php if(get_field('equipe')) { ?><li role="presentation" <?php if(get_field('equipe')) { echo 'class="active"'; } ?>><a href="#equipe" aria-controls="equipe" role="tab" data-toggle="tab"><?php pll_e("Equipe"); ?></a></li><?php } ?>
                                     <?php if(get_field('partenaires/credits')) { ?><li role="presentation" <?php if(!get_field('equipe')) { echo 'class="active"'; } ?>><a href="#partenaires" aria-controls="partenaires" role="tab" data-toggle="tab"><?php pll_e("Partenaires / Crédits"); ?></a></li><?php } ?>
                                     <?php if(get_field('presse')) { ?><li role="presentation"><a href="#presse" aria-controls="presse" role="tab" data-toggle="tab"><?php pll_e("Presse"); ?></a></li><?php } ?>
-                                    <?php if(get_field('festival')) { ?><li role="presentation"><a href="#festivals" aria-controls="festivals" role="tab" data-toggle="tab"><?php pll_e("Festivals"); ?></a></li><?php } ?>
+                                    <?php if(get_field('festivals')) { ?><li role="presentation"><a href="#festivals" aria-controls="festivals" role="tab" data-toggle="tab"><?php pll_e("Festivals"); ?></a></li><?php } ?>
                                 </ul>
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane <?php if(get_field('equipe')) { echo 'active'; } ?>" id="equipe"><?php the_field('equipe'); ?></div>
                                     <div role="tabpanel" class="tab-pane <?php if(!get_field('equipe')) { echo 'active'; } ?>" id="partenaires"><?php the_field('partenaires/credits'); ?></div>
-                                    <div role="tabpanel" class="tab-pane" id="presse"><?php the_field('presse'); ?></div>
-                                    <div role="tabpanel" class="tab-pane" id="festivals"><?php the_field('festival'); ?></div>
+                                    <div role="tabpanel" class="tab-pane" id="presse">
+	                                    
+											<?php
+												$imageArray = get_field('presse'); // Array returned by Advanced Custom Fields
+												$imageURL = esc_url($imageArray['url']); // Grab the full size version 
+											?>
+											 
+											<a href="<?php echo $imageURL; ?>" target="_blank" class="btn-rect-court btn-jaune btn-center"><i style="margin-right: 10px;" class="fa fa-file-pdf-o" aria-hidden="true"></i> <?php pll_e("Voir la revue de presse"); ?></a>
+										
+	                                </div>
+                                    <div role="tabpanel" class="tab-pane" id="festivals"><?php the_field('festivals'); ?></div>
                                 </div>
 							</div>
 					</div>
