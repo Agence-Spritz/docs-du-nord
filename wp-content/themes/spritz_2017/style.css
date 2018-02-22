@@ -270,3 +270,7 @@ color: #fff;
 .video_de_presentation iframe {
 	width: 100%;
 }
+
+li#menu-item-167-en {
+display: none;
+}
