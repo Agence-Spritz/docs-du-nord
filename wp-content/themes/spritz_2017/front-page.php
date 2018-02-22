@@ -36,8 +36,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<div class="heading-title center">
 									<div class="col-md-1"></div>
 										<div class="col-xs-12 col-md-10">
-											<h1><?php pll_e("Production de films documentaires"); ?></h1>
-											<h4><?php pll_e("Un nouveau regard sur le monde qui nous entoure"); ?></h4>
+											<h1><?php pll_e("Maison de production"); ?></h1>
+											<h4><?php pll_e("Les Docs du Nord produisent des docs <span style='font-size: 11px;'>(mais pas que)</span> dans le Nord <span style='font-size: 11px;'>(mais pas que)</span>"); ?></h4>
 										
 											<div class="separateur"></div>
 											<?php the_field("zone_texte_1"); ?>
@@ -156,8 +156,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="col-md-6 m-t-50 m-b-50 m-m-t-15 m-m-b-35 no-padding">
 					<div class="col-md-9 ">
 						<div class="heading-title left">
-							<h2><?php pll_e("Le monde mis en lumière"); ?></h2>
-							<h4><?php pll_e("+ de 30 films et documentaires"); ?></h4>
+							<h2><?php pll_e("Un regard sensible<br /> sur le monde"); ?></h2>
+							<h4><?php pll_e("+ de 30 films"); ?></h4>
 							<div class="separateur"></div>
 						</div>
 					</div>
