@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  	<!-- heading de la page, fond parallax -->
  	<div class="container-fluid">
 		<div class="row">
-			<div class="page-heading" data-section="home" style="background-image: url(<?php echo $GLOBALS['image_defaut']; ?>);" data-stellar-background-ratio="0.5">
+			<div class="page-heading" data-section="home" style="background-image: url(<?php echo get_template_directory_uri().'/images/fond-recherche.jpg'; ?>);" data-stellar-background-ratio="0.5">
 			
 					<article id="post-<?php the_ID(); ?> <?php post_class(); ?>">
 							<div class="spritz-title-holder">
