@@ -86,6 +86,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 										$categorie_name = $categories[0]->name; 
 										if($categorie_name) { echo $categorie_name; } ?>
 								</h4>
+								<p><?php if(get_field('sous_categorie')) {
+									the_field('sous_categorie');
+									} ?>
+								</p>
 								<div class="separateur"></div>
 								<p>
 									<?php if(get_field('annee_de_realisation')) { ?><span class="titre-info"><?php pll_e("Année"); ?> :</span> <?php the_field('annee_de_realisation'); ?><br /><?php } ?>
