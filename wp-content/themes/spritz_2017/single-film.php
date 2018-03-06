@@ -93,7 +93,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 								<div class="separateur"></div>
 								<p>
 									<?php if(get_field('annee_de_realisation')) { ?><span class="titre-info"><?php pll_e("Année"); ?> :</span> <?php the_field('annee_de_realisation'); ?><br /><?php } ?>
-									<?php if(get_field('realisateur')) { ?><span class="titre-info"><?php pll_e("Réalisateur"); ?> :</span> <?php the_field('realisateur'); ?><br /><?php } ?>
+									<?php if(get_field('realisateur')) { ?><span class="titre-info"><?php pll_e("Auteur-réalisateur"); ?> :</span> <?php the_field('realisateur'); ?><br /><?php } ?>
 									<?php if(get_field('co-auteur')) { ?><span class="titre-info"><?php pll_e("Co-Auteur"); ?> :</span> <?php the_field('co-auteur'); ?><br /><?php } ?>
 									<?php if(get_field('duree')) { ?><span class="titre-info"><?php pll_e("Durée"); ?> :</span> <?php the_field('duree'); ?><br /><?php } ?>
 									<?php if(get_field('distribution')) { ?><span class="titre-info"><?php pll_e("Distribution"); ?> :</span> <?php the_field('distribution'); ?><?php } ?>
