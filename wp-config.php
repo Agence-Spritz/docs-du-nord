@@ -84,7 +84,7 @@ $table_prefix  = 'wp_ddn_';
  */
 define('WP_DEBUG', false);
 
-define(‘WP_LESS_COMPILATION’, ‘always’);
+define(‘WP_LESS_COMPILATION’, ‘deep’);
 
 /* C’est tout, ne touchez pas à ce qui suit ! */
 
