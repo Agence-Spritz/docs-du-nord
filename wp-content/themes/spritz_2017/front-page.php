@@ -179,7 +179,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 				
 				<div class="col-md-12 m-t-40 text-center">
-					<a href="<?php bloginfo('wpurl');?><?php if(get_locale() == 'en_GB') { echo '/en/documentary-films/'; } else { echo '/films-documentaires/'; }  ?>" class="btn-rect-court btn-jaune btn-center"><?php pll_e("Découvrir notre catalogue"); ?></a>
+					<a href="<?php bloginfo('wpurl');?><?php if(get_locale() == 'en_GB') { echo '/en/documentaries-films/'; } else { echo '/films-documentaires/'; }  ?>" class="btn-rect-court btn-jaune btn-center"><?php pll_e("Découvrir notre catalogue"); ?></a>
 				</div>
 				<div class="clearfix"></div>
 				
