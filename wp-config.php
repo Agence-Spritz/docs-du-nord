@@ -1,4 +1,10 @@
 <?php
+
+// BEGIN iThemes Security - Ne pas modifier ou supprimer cette ligne
+// iThemes Security Config Details: 2
+define( 'DISALLOW_FILE_EDIT', true ); // Désactiver l’éditeur de fichier - Sécurité > Réglages > Modifications de WordPress > Éditeur de fichier
+// END iThemes Security - Ne pas modifier ou supprimer cette ligne
+
 /**
  * La configuration de base de votre installation WordPress.
  *
