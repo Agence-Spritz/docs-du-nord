@@ -1,6 +1,6 @@
 <?php // Ici on définit les variables globales
 	
-$GLOBALS['lien_fb'] = 'https://www.facebook.com/LesDocsDuNord/';
+$GLOBALS['lien_fb'] = 'https://www.facebook.com/DocsDuNord/';
 $GLOBALS['lien_instagram'] = "https://www.instagram.com/lesdocsdunord/";
 $GLOBALS['lien_twitter'] = "https://twitter.com/DocsduNord";
 $GLOBALS['lien_linkedin'] = "https://www.linkedin.com/company/lesdocsdunord/";
@@ -11,7 +11,7 @@ $GLOBALS['adresse'] = "99C Bvd Constantin Descat";
 $GLOBALS['cp'] = "59200";
 $GLOBALS['ville'] = "Tourcoing";
 $GLOBALS['tel'] = "+33(0)3 20 16 90 06";
-$GLOBALS['mail'] = "contact@lesdocsdunord.fr";
+$GLOBALS['mail'] = "contact@docsdunord.fr";
 
 if(get_locale() == 'en_GB') {
 	$GLOBALS['titre_principal'] = "Production of documentary films";
