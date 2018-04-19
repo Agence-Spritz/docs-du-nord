@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin
  */
 
@@ -56,7 +58,7 @@ class WPSEO_Taxonomy_Fields_Presenter {
 		$help_button_text = isset( $field_configuration['options']['help-button'] ) ? $field_configuration['options']['help-button'] : '';
 		$help             = new WPSEO_Admin_Help_Panel( $field_name, $help_button_text, $help_content );
 
-		if ( in_array( $field_configuration['type'], array( 'focuskeyword', 'pageanalysis', 'snippetpreview' ) ) ) {
+		if ( in_array( $field_configuration['type'], array( 'focuskeyword', 'pageanalysis', 'snippetpreview' ), true ) ) {
 			return $this->parse_section_row( $field, $field_configuration['type'], $help );
 		}
 
@@ -75,12 +77,14 @@ class WPSEO_Taxonomy_Fields_Presenter {
 	 */
 	private function get_field( $field_type, $field_name, $field_value, array $options ) {
 
-		$class = $this->get_class( $options );
-		$field = $description = $aria_describedby = '';
+		$class            = $this->get_class( $options );
+		$field            = '';
+		$description      = '';
+		$aria_describedby = '';
 
 		if ( ! empty( $options['description'] ) ) {
 			$aria_describedby = ' aria-describedby="' . $field_name . '-desc"';
-			$description = '<p id="' . $field_name . '-desc" class="yoast-metabox__description">' . $options['description'] . '</p>';
+			$description      = '<p id="' . $field_name . '-desc" class="yoast-metabox__description">' . $options['description'] . '</p>';
 		}
 
 		switch ( $field_type ) {
@@ -92,12 +96,11 @@ class WPSEO_Taxonomy_Fields_Presenter {
 				$field .= '<div id="wpseosnippet" class="wpseosnippet"></div>';
 				break;
 			case 'pageanalysis':
-				$field .= '<div id="pageanalysis">';
-				$field .= '<section class="yoast-section" id="wpseo-pageanalysis-section">';
-				$field .= '<h3 class="yoast-section__heading yoast-section__heading-icon yoast-section__heading-icon-list">' . __( 'Analysis', 'wordpress-seo' ) . '</h3>';
-				$field .= '<div id="wpseo_analysis"></div>';
-				$field .= '</section>';
-				$field .= '</div>';
+				if ( WPSEO_Options::get( 'content_analysis_active', true ) === false && WPSEO_Options::get( 'keyword_analysis_active', true ) === false ) {
+					break;
+				}
+
+				$field .= '<div id="pageanalysis"></div>';
 				break;
 			case 'focuskeyword':
 				$field .= '<div id="wpseofocuskeyword">';
@@ -133,7 +136,7 @@ class WPSEO_Taxonomy_Fields_Presenter {
 
 					foreach ( $select_options as $option => $option_label ) {
 						$selected = selected( $option, $field_value, false );
-						$field .= '<option ' . $selected . ' value="' . esc_attr( $option ) . '">' . esc_html( $option_label ) . '</option>';
+						$field   .= '<option ' . $selected . ' value="' . esc_attr( $option ) . '">' . esc_html( $option_label ) . '</option>';
 					}
 					unset( $option, $option_label, $selected );
 
@@ -221,7 +224,7 @@ class WPSEO_Taxonomy_Fields_Presenter {
 	 * @return string
 	 */
 	private function parse_section_row( $content, $esc_form_key, WPSEO_Admin_Help_Panel $help ) {
-		$html = $content;
+		$html  = $content;
 		$html .= '<div class="wpseo_hidden" id="help-yoast-' . $esc_form_key . '">' . $help->get_button_html() . $help->get_panel_html() . '</div>';
 		return $html;
 	}
